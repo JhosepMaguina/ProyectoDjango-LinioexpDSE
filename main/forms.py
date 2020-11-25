@@ -13,8 +13,7 @@ class UserForm(UserCreationForm):
     # Profile attributes
     documento_identidad = forms.CharField(max_length=8)
     fecha_nacimiento = forms.DateField()
-    estado = forms.CharField(max_length=3, required=False)
-
+    estado = forms.CharField(max_length=3)
     ## Opciones de genero
     MASCULINO = 'MA'
     FEMENINO = 'FE'
@@ -37,7 +36,7 @@ class UserForm(UserCreationForm):
 
     # Colaborador attributes
     is_colaborador = forms.BooleanField(required=False)
-    reputacion = forms.FloatField(required=False) #El usuario no debería ser capaz de poner su reputación
+    reputacion = forms.FloatField(required=False)
     cobertura_entrega = forms.ModelChoiceField(queryset=Localizacion.objects.all(), required=False)
 
 #-------------------------------------------------------------------------------
